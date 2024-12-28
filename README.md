@@ -75,7 +75,7 @@ TeachBridge
 │   │   └── Index.jsx
 │   ├── package-lock.json
 │   └── package.json
-
+```
 ## 
 Here's a markdown format that focuses on your TeachBridge project, explaining the project, showing the project structure, tech stack, and API documentation:
 
