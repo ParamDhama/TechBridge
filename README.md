@@ -158,7 +158,7 @@ TeachBridge
 │   │   └── Index.jsx
 │   ├── package-lock.json
 │   └── package.json
-
+```
 
 ## Tech Stack
 The TeachBridge project is built using the following technologies:
