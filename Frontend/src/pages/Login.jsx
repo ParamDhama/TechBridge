@@ -2,27 +2,24 @@ import React, { useState } from 'react';
 import axios from 'axios';
 import { jwtDecode } from 'jwt-decode';
 import { FaUser, FaLock } from 'react-icons/fa'; // Import icons
+import { useNavigate } from 'react-router-dom';
 
 const LoginComponent = () => {
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
   const [error, setError] = useState('');
-  const [token, setToken] = useState('');
-  const [role, setRole] = useState(''); // State to store user's role
 
+  const navigator = useNavigate();
   // Handle login
   const handleLogin = async (e) => {
     e.preventDefault();
     try {
-      const response = await axios.post('http://localhost:3000/api/login', {
+      const response = await axios.post('https://techbridge-qt0l.onrender.com/api/login', {
         username,
         password,
       });
       // Save token and decode role
       localStorage.setItem('token', response.data.token);
-      const decodedToken = jwtDecode(response.data.token);
-      setRole(decodedToken.role); // Set the role
-      setToken(response.data.token);
 
       setError('');
       alert('Login successful');

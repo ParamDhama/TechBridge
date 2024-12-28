@@ -17,7 +17,7 @@ const app = express();
 
 // CORS configuration for allowing credentials (cookies, auth headers) and specific origin
 const corsOptions = {
-  origin: 'https://techbridgepage.netlify.app',  // Specify the frontend origin
+  origin: '*',  // Specify the frontend origin
   methods: ['GET', 'POST', 'PUT', 'DELETE'],  // Allowed HTTP methods
   allowedHeaders: ['Content-Type', 'Authorization'],  // Allowed headers
   credentials: true  
