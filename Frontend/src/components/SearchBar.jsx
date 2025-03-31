@@ -11,7 +11,7 @@ const SearchBar = ({ onSearch }) => {
   };
 
   return (
-    <div className="p-4 w-full">
+    <div className="px-4 md:pl-4 md:pr-96 w-full">
       <input
         type="text"
         placeholder="Search..."

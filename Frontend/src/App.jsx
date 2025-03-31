@@ -9,12 +9,14 @@ import Navbar from './components/Navbar'; // Navbar Component
 const App = () => {
   return (
     <Router>
-      <div className="flex min-h-screen bg-gray-100">
+      <div className="flex flex-col lg:flex-row min-h-screen bg-gray-100">
         {/* Sidebar */}
-        <Navbar />
+        <div className="lg:w-[18.5vw] bg-gray-800 p-4">
+          <Navbar />
+        </div>
         
         {/* Main Content */}
-        <div className="flex-1 ml-[18.5vw]  bg-gradient-to-br from-blue-400 to-purple-500 min-h-screen p-6 overflow-hidden">
+        <div className="flex-1 bg-gradient-to-br from-blue-400 to-purple-500 min-h-screen  overflow-hidden">
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/internship" element={<Content />} />

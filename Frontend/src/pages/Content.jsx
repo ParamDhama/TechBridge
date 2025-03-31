@@ -24,10 +24,9 @@ const Content = () => {
     resetForm,
   } = useOpportunities(type);
 
-
   return (
     <div className='w-full'>
-     {openForm && (
+      {openForm && (
         <OpportunityCreateForm
           handleChange={handleChange}
           handleFormSubmit={handleFormSubmit}
@@ -38,18 +37,17 @@ const Content = () => {
         />
       )}
 
-      <div className='w-full fixed  top-4'>
-        <div className='flex w-9/12 justify-between items-center'>
-      <SearchBar onSearch={handleSearch} />
-      {/* <h1 className='text-3xl'>{type || 'All Opportunities'}</h1> */}
-      {(isAdmin&!openForm)?<AddItemButton onClickHandle={()=>setOpenForm(true)}/>:<span></span>}
+      <div className='w-full fixed top-4 px-4 md:px-8'>
+        <div className='flex flex-col md:flex-row w-full justify-between items-center'>
+          <SearchBar onSearch={handleSearch} />
+          {/* Conditional render for admin and openForm */}
+          {(isAdmin && !openForm) && <AddItemButton onClickHandle={() => setOpenForm(true)} />}
+        </div>
       </div>
-      </div>
-      {/* Search Bar Component */}
       
       {/* Display the filtered data */}
-      <div className="overflow-x-auto h-[80vh] mt-24 w-11/12">
-        {data.length > 0 ? ( // FIX: Replace searchQuery with data
+      <div className="overflow-x-auto mt-24 px-4 md:px-8 w-full">
+        {data.length > 0 ? (
           data.map((item, index) => (
             <OpportunityCard
               key={index}

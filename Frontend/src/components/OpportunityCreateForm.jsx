@@ -1,7 +1,6 @@
 import React, { useRef, useEffect } from 'react';
 import { RxCross2 } from "react-icons/rx";
 
-
 const OpportunityCreateForm = ({ handleChange, handleFormSubmit, handleClearForm, newItem, editMode, setOpenForm }) => {
   const formRef = useRef(null);
 
@@ -19,15 +18,18 @@ const OpportunityCreateForm = ({ handleChange, handleFormSubmit, handleClearForm
     };
   }, [setOpenForm]);
 
-
   return (
-    <div className="  container w-9/12 mx-auto p-4 fixed top-20 bg-white">
-      <button className='fixed top-20 right-24 text-red-800 w-12 h-12 text-2xl' onClick={() => setOpenForm(false)}>
-      <RxCross2 />
+    <div className="fixed top-20 left-0 right-0 z-50 mx-auto p-4 w-full max-w-4xl bg-white">
+      {/* Close Button */}
+      <button className='fixed top-20 right-6 text-red-800 w-12 h-12 text-2xl' onClick={() => setOpenForm(false)}>
+        <RxCross2 />
       </button>
-      <h1 className="text-3xl mb-4">{editMode ? 'Update Opportunity' : 'Create Opportunity'}</h1>
+
+      <h1 className="text-3xl mb-4 text-center">{editMode ? 'Update Opportunity' : 'Create Opportunity'}</h1>
+
       <form onSubmit={handleFormSubmit} className="space-y-4 p-4 border rounded shadow-md">
-        <div className="overflow-y-auto h-80 p-2">
+        <div className="overflow-y-auto h-[80vh] p-2">
+
           {/* Title */}
           <div>
             <label className="block font-medium">Title</label>
@@ -115,7 +117,6 @@ const OpportunityCreateForm = ({ handleChange, handleFormSubmit, handleClearForm
               onChange={handleChange}
               className="w-full p-2 border rounded"
             />
-
           </div>
 
           {/* Status */}
@@ -136,14 +137,14 @@ const OpportunityCreateForm = ({ handleChange, handleFormSubmit, handleClearForm
         </div>
 
         {/* Buttons */}
-        <div className="flex flex-row w-96 justify-between">
-          <button type="submit" className="bg-blue-500 text-white p-2 rounded mt-4">
+        <div className="flex flex-col md:flex-row w-full justify-between items-center">
+          <button type="submit" className="bg-blue-500 text-white p-2 rounded mt-4 w-full md:w-auto">
             {editMode ? 'Update Opportunity' : 'Create Opportunity'}
           </button>
 
           <button
             type="reset"
-            className="bg-white text-gray-700 border border-gray-800 p-2 rounded mt-4"
+            className="bg-white text-gray-700 border border-gray-800 p-2 rounded mt-4 w-full md:w-auto"
             onClick={handleClearForm} // Reset to default
           >
             Clear

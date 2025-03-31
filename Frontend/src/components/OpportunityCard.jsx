@@ -22,9 +22,9 @@ const OpportunityCard = ({ opportunity, handleDeleteItem, handleEditItem }) => {
   const formattedPostedDate = new Date(postedDate).toLocaleDateString();
 
   return (
-    <div className="bg-white rounded-lg shadow-xl p-6 mb-6 ">
+    <div className="bg-white rounded-lg shadow-xl p-6 mb-6 w-full sm:w-11/12 md:w-9/12 lg:w-1/2 xl:w-1/3 mx-auto">
       {/* Title and Admin Controls */}
-      <div className="flex justify-between items-center">
+      <div className="flex justify-between items-center mb-4">
         <div className="font-bold text-2xl text-gray-900">{title}</div>
         {isAdmin && (
           <div className="flex space-x-2">

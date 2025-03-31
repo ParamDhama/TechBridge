@@ -4,23 +4,31 @@ import { useNavigate } from 'react-router-dom';
 
 const Home = () => {
   const navigate = useNavigate(); // React Router navigation hook
+
   return (
-    <div className="h-5/6 flex items-center justify-center bg-gradient-to-br from-blue-400 to-purple-500">
-      <div className="text-center h-5/6 space-y-5  bg-white p-10 rounded-lg shadow-lg max-w-lg">
-        <FaHome className="text-blue-500 text-6xl mx-auto mb-4" />
-        <h1 className="text-3xl font-bold text-gray-800 mb-2">Welcome to TechBridge!</h1>
-        <p className="text-gray-600 mb-4">
+    <div className="h-screen flex items-center justify-center bg-gradient-to-br from-indigo-500 via-blue-600 to-purple-700">
+      <div className="text-center bg-white p-8 md:p-12 rounded-3xl shadow-2xl w-11/12 sm:w-10/12 md:w-8/12 lg:w-7/12">
+        {/* Icon */}
+        <FaHome className="text-blue-600 text-7xl mx-auto mb-6 animate-bounce" />
+
+        {/* Title */}
+        <h1 className="text-4xl sm:text-5xl font-bold text-gray-900 mb-6">
+          Welcome to TechBridge!
+        </h1>
+
+        {/* Description */}
+        <p className="text-lg sm:text-xl text-gray-600 mb-6">
           Explore amazing opportunities and grow with us. Start your journey today!
         </p>
+
+        {/* Explore Button */}
         <div>
-          
-        <button
-        onClick={() => navigate('/internship')}
-          className="px-6 py-3 bg-blue-500 text-white rounded-lg hover:bg-blue-600 transition duration-300 mt-8"
-        >
-          
-          Explore Now
-        </button>
+          <button
+            onClick={() => navigate('/internship')}
+            className="px-8 py-4 bg-gradient-to-r from-blue-500 to-indigo-600 text-white rounded-full shadow-lg hover:scale-105 transition-all duration-300"
+          >
+            Explore Now
+          </button>
         </div>
       </div>
     </div>
